@@ -1,0 +1,29 @@
+# Starting main script
+echo "Starting script...";
+echo ""
+echo "Enter password to update sleep settings: "
+sudo echo "Disabling sleep..."
+
+# Creating helper process
+echo "# This is a helper script. Do not run manually." > ~/Desktop/PauseSleep/DontSleepHelper.sh
+echo "sudo pmset -a disablesleep 1"                    >> ~/Desktop/PauseSleep/DontSleepHelper.sh
+echo "rm -f ~/Desktop/PauseSleep/DontSleepHelper.sh"   >> ~/Desktop/PauseSleep/DontSleepHelper.sh
+echo "sleep 60"                                        >> ~/Desktop/PauseSleep/DontSleepHelper.sh
+echo "sudo pmset -a disablesleep 0"                    >> ~/Desktop/PauseSleep/DontSleepHelper.sh
+echo "exit 0;"                                         >> ~/Desktop/PauseSleep/DontSleepHelper.sh
+chmod 755 ~/Desktop/PauseSleep/DontSleepHelper.sh
+
+# Launching the helper as a standalone process
+nohup ~/Desktop/PauseSleep/DontSleepHelper.sh &
+
+# Waiting for a second then printing info for the user
+sleep 1
+echo ""
+echo "/------------------------------------------------------------------\\"
+echo "| You may now close this window and shut the macbook lid.            |"
+echo "| If lid is not closed within 1 minutes, clamshell mode will be      |"
+echo "| reverted to default to prevent you from from forgetting about it.  |"
+echo "\\------------------------------------------------------------------/"
+echo ""
+echo ""
+echo "Script is done."

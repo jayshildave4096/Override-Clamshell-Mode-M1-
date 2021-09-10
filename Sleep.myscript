@@ -1,0 +1,11 @@
+## Note: This file is optional but good to have in case you somehow get stuck in No Sleep mode.
+
+# Starting main script
+echo "Starting script...";
+echo ""
+echo "Enter password to update sleep settings: "
+sudo echo "Reverting any still-un-revered settings and going to sleep..."
+sudo pmset -a disablesleep 0
+sudo pmset sleepnow
+echo ""
+echo "Script is done."
