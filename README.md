@@ -5,9 +5,13 @@ Steps:
 1. Open Terminal.app and run these commands to create the script files and set their permissions:
     
     mkdir ~/Desktop/PauseSleep
+    
     echo "" > ~/Desktop/PauseSleep/DontSleep.myscript
+    
     chmod 755 ~/Desktop/PauseSleep/DontSleep.myscript
+    
     echo "" > ~/Desktop/PauseSleep/Sleep.myscript
+    
     chmod 755 ~/Desktop/PauseSleep/Sleep.myscript
    
 2. Go to Desktop > PauseSleep and double click on DontSleep.myscript. This will ask you what application to open the file with: Choose Utilities > Terminal.app. (This step is important because it will later let you click-to-run your script.)
