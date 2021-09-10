@@ -3,6 +3,7 @@ Here you will find a fully-native way to do this on a Mac without any third part
 Steps:
 
 1. Open Terminal.app and run these commands to create the script files and set their permissions:
+    
     mkdir ~/Desktop/PauseSleep
     echo "" > ~/Desktop/PauseSleep/DontSleep.myscript
     chmod 755 ~/Desktop/PauseSleep/DontSleep.myscript
